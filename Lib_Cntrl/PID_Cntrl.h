@@ -1,0 +1,27 @@
+#ifndef PID_CNTRL_H_
+#define PID_CNTRL_H_
+
+class PID_Cntrl
+{
+public:
+
+    PID_Cntrl(float P, float I, float D, float tau_f, float Ts, float uMin, float uMax);
+    PID_Cntrl() {};
+
+    float operator()(float e)
+    {
+        return update(e);
+    }
+
+    virtual ~PID_Cntrl();
+
+    void    reset(float initValue);
+    void    setCoefficients(float P, float I, float D, float tau_f, float Ts, float uMin, float uMax);
+    float   update(float e);
+
+private:
+
+
+};
+
+#endif

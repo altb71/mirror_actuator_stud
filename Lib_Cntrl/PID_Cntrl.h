@@ -18,9 +18,12 @@ public:
     void    reset(float initValue);
     void    setCoefficients(float P, float I, float D, float tau_f, float Ts, float uMin, float uMax);
     float   update(float e);
+    float   saturate(float);
+
 
 private:
-
+    float P,I,D,tau_f,Ts,uMax,uMin;
+    float Ipart;
 
 };
 

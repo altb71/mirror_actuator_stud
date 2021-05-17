@@ -62,8 +62,7 @@ path_1d p2;             // pathplanner (under constr.)
 path_1d *current_path;
 // --------- GPA -----------------------------
 //init values: f0,   f1, nbPts, A0, A1, Ts
-GPA      myGPA(5 , 2400,    40, 25, 25, Ts);
-float exc=0.0;              // excitation GPA
+GPA      myGPA(5 , 2400,    40, 60, 50, Ts);
 //------------------------------------------------------------------------------
 // --------- Mirror kinematik, define values, trafos etc there
 Mirror_Kinematic mk;
@@ -95,7 +94,7 @@ int main()
     i_des1.write(i2u(0));
     i_des2.write(i2u(0));
     ThisThread::sleep_for(200);
-    uart_com.send_text((char *)"Start Mirroractuator 1.1");
+    uart_com.send_text((char *)"Start Mirroractuator 1.2");
    /* p1.initialize(300,10,A,0,0,0);
     p2.initialize(300,10,-A,0,0,A);*/
     laser_on = 0;

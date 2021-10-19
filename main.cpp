@@ -73,6 +73,7 @@ DATA_Xchange data;
 //******************************************************************************
 //---------- main loop -------------
 //******************************************************************************
+
 int main()
 {
     serial_port.set_baud(115200);
@@ -85,7 +86,8 @@ int main()
     i_enable = 0;       // disable current first
     counter1.reset();   // encoder reset
     counter2.reset();   // encoder reset
-    mk.set_offsets(0,0);          // individal set values for global position
+    mk.set_offsets(982,-167);          // individal set values for global position
+    mk.trafo_is_on = true;
     glob_ti.start();
     glob_ti.reset();
     loop.init_controllers();
@@ -97,7 +99,7 @@ int main()
     uart_com.send_text((char *)"Start Mirroractuator 1.2");
    /* p1.initialize(300,10,A,0,0,0);
     p2.initialize(300,10,-A,0,0,A);*/
-    laser_on = 0;
+    laser_on = true;
     //for(int wk =0;wk<5;wk++)
     while(0)
         {

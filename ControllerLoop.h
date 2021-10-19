@@ -38,7 +38,7 @@ public:
     virtual     ~ControllerLoop();
     void start_loop(void);
     void init_controllers(void);
-    
+    void reset_pids(void);
 
 
 private:
